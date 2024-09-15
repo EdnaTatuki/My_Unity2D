@@ -1,0 +1,14 @@
+参与人物,System,拉尼娅,伊薇特,伊薇特-觉醒,阿莱美达,
+索引,类型,人物,内容,下一步索引,角色位置,立绘名称,字体
+0,Dialog,拉尼娅,你好！,1,0,normal,sc
+1,Dialog,伊薇特,这是一个对话测试,2,1,normal,sc
+2,Dialog,伊薇特-觉醒,我们的立绘都会动啊,3,2,normal,sc
+3,Dialog,阿莱美达,是啊，好神奇啊,4,3,normal,sc
+4,Dialog,拉尼娅,这是因为我们采用的都是Spine技术,5,0,normal,sc
+5,Dialog,伊薇特,这是测试Spine的文本,6,1,normal,sc
+6,Dialog,伊薇特-觉醒,原来如此,7,2,normal,sc
+7,Dialog,阿莱美达,好神奇啊,8,3,normal,sc
+8,Dialog,拉尼娅,嗯嗯,9,0,normal,sc
+9,Dialog,伊薇特,是的呢,10,1,normal,sc
+10,Dialog,伊薇特-觉醒,测试就结束了,11,2,normal,sc
+11,End,System,,12,0,normal,sc

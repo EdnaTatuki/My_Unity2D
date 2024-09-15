@@ -1,0 +1,7 @@
+参与人物,System,YJY,Alliycia,Magie,Orika,Rin,
+索引,类型,人物,内容,下一步索引,角色位置,立绘名称,字体
+0,ChangeBg,System,None,1,0,normal,sc
+1,Dialog,YJY,这里是大陆的最北部。。。,2,0,normal,sc
+2,Dialog,Alliycia,前面好像有个村子,3,1,normal,sc
+3,Dialog,Magie,遵命,4,2,normal,sc
+4,End,System,,5,,,

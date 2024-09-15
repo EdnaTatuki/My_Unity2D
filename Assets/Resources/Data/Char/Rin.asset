@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a694bb663e6071548b76a980f7fffebd, type: 3}
+  m_Name: Rin
+  m_EditorClassIdentifier: 
+  Char_name: Rin
+  Char_Fullname: 
+  Rarity: 3
+  Sex: 2
+  Strength: 60
+  Stamina: 40
+  Dexterity: 40
+  Speed: 30
+  Intellgence: 30
+  Spirit: 70
+  Sight: 3
+  Serises: JG
+  IllustrationType: Sprite
+  Char_SpriteName:
+  - normal
+  Char_SpriteImg:
+  - {fileID: 21300000, guid: 6435737ca4736734698c71778b00434d, type: 3}
+  Char_SpineName: []
+  Char_SpineImg: []
+  Race: 00000000
+  Race_Detail:
+  - DarkGoddess
+  Char_icon: {fileID: 0}
+  SO: 0
+  Logic: 20
+  Feeling: 30

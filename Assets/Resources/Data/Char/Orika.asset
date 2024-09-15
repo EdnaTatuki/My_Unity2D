@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a694bb663e6071548b76a980f7fffebd, type: 3}
+  m_Name: Orika
+  m_EditorClassIdentifier: 
+  Char_name: Orika
+  Char_Fullname: 
+  Rarity: 1
+  Sex: 2
+  Strength: 40
+  Stamina: 40
+  Dexterity: 45
+  Speed: 40
+  Intellgence: 40
+  Spirit: 40
+  Sight: 5
+  Serises: OR
+  IllustrationType: Sprite
+  Char_SpriteName:
+  - normal
+  Char_SpriteImg:
+  - {fileID: 21300000, guid: 38ac2446aba189a48b4e4d1e9caf89c8, type: 3}
+  Char_SpineName: []
+  Char_SpineImg: []
+  Race: 00000000
+  Race_Detail: []
+  Char_icon: {fileID: 0}
+  SO: 0
+  Logic: 50
+  Feeling: 60

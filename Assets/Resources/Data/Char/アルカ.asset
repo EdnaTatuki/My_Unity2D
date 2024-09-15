@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a694bb663e6071548b76a980f7fffebd, type: 3}
+  m_Name: "\u30A2\u30EB\u30AB"
+  m_EditorClassIdentifier: 
+  Char_name: "\u30A2\u30EB\u30AB"
+  Char_Fullname: 
+  Rarity: 0
+  Sex: 0
+  Strength: 0
+  Stamina: 0
+  Dexterity: 0
+  Speed: 0
+  Intellgence: 0
+  Spirit: 0
+  Sight: 0
+  Serises: 
+  IllustrationType: Spine
+  Char_SpriteName: []
+  Char_SpriteImg: []
+  Char_SpineName:
+  - normal
+  Char_SpineImg:
+  - {fileID: 11400000, guid: e0e9a02e7a6210e4083c1c029ccc322f, type: 2}
+  Race: 
+  Race_Detail: []
+  Char_icon: {fileID: 0}
+  SO: 0
+  Logic: 0
+  Feeling: 0
