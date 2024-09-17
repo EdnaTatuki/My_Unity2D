@@ -15,8 +15,8 @@ public class Main_menu : MonoBehaviour
 
     public void New_game()
     {
-        SceneManager.LoadScene("Story");
-        //SceneManager.LoadScene("WorldMap");
+        //SceneManager.LoadScene("Story");
+        SceneManager.LoadScene("WorldMap");
         //SceneManager.LoadScene("SMap");
 
     }

@@ -42,12 +42,22 @@ public class Charatcater_I
             Char_RaceDic = Sec_Race(Char_base_Stat.Race, Char_base_Stat.Race_Detail);
         }
 
-        //Char_BPS=Creat_Body_ByRace(Char_base_Stat);
+        Char_BPS=Creat_Body_ByRace(Char_base_Stat);
         
-
-        //GetDisForBPL("Default", Char_BPS, Char_base_Stat);
-
-
+        if (Char_BPS.Count != 0) 
+        {
+            // some errors in  string.Empty
+            //how to use  Default power
+            if (Char_base_Stat.BPL_DisName == string.Empty)
+            {
+            GetDisForBPL("Default", Char_BPS, Char_base_Stat);
+            }
+            else
+            {
+            GetDisForBPL(Char_base_Stat.BPL_DisName, Char_BPS, Char_base_Stat);
+            }
+        }
+ 
 
     }
 
@@ -63,8 +73,8 @@ public class Charatcater_I
         //дһ����csv�ļ����ȡ�ģ���Ҫ�����б�
         List<BodyPS> result = new List<BodyPS>();
         //�������
-        // Race_BPL ����ֱ�Ӹ�һ������str��Ȼ���Զ���
-        //Ҳ���Ը�һ�� �����ָ�ĸ�ʽ�������ֶ�����
+        // Race_BPL read a string or  [head,0 ......] 
+        // some errors in  string.Empty
         if (_Stats.Race_BPL != string.Empty)
         {
             string[] bpln = _Stats.Race_BPL.Split(",");
@@ -82,7 +92,7 @@ public class Charatcater_I
 
         }
 
-        //�ڶ��������
+        //read race detail
         if (_Stats.Race_Detail.Count != 0 && _Stats.Race_Detail[0] != "#")
         {
             result = GetBPLFromRace_Str(_Stats.Race_Detail[0]);
@@ -90,7 +100,7 @@ public class Charatcater_I
         }
 
 
-        //��һ�������
+        //read race
 
          result = GetBPLFromRace_Str(_Stats.Race[0].ToString());
         if (result.Count == 0) {
@@ -264,6 +274,7 @@ public class Charatcater_I
                 }
                 break;
             }
+            Debug.Log("Error"+ stat.Char_name+ "BPS's stats is Empty");
 
         }
 
@@ -271,12 +282,12 @@ public class Charatcater_I
         {
             if (result.ContainsKey(bps[i].BPType.ToString()))
             {
-                bps[i].Strength = ((1- GetDisForBPL_Rnd())*float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Strength;
-                bps[i].Dexterity = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Dexterity;
+                bps[i].Strength = ((1- GetDisForBPL_Rnd())*float.Parse(result[bps[i].BPType.ToString()][0]) / 100) * stat.Strength;
+                bps[i].Dexterity = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][2]) / 100) * stat.Dexterity;
                 bps[i].Stamina = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Stamina;
-                bps[i].Speed = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Speed;
-                bps[i].Intellgence = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Intellgence;
-                bps[i].Spirit = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Spirit;
+                bps[i].Speed = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][5]) / 100) * stat.Speed;
+                bps[i].Intellgence = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][4]) / 100) * stat.Intellgence;
+                bps[i].Spirit = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][3]) / 100) * stat.Spirit;
 
 
             }

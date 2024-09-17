@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Body Parts", menuName = "New Charater Body Parts")]
 
-public class BodyPS : ScriptableObject
+public class BodyPS 
 {
 
     public Char_BodyParts_Type BPType;
@@ -28,7 +27,7 @@ public class BodyPS : ScriptableObject
 
 }
 
-[CreateAssetMenu(fileName = "Body Parts", menuName = "New Charater Body Parts Head")]
+
 public class BodyPS_Head: BodyPS
 {
 
@@ -39,8 +38,6 @@ public class BodyPS_Head: BodyPS
 
 
 }
-
-[CreateAssetMenu(fileName = "Body Parts", menuName = "New Charater Body Parts Body")]
     public class BodyPS_Body : BodyPS
 {
     public BodyPS_Body()
@@ -50,7 +47,6 @@ public class BodyPS_Head: BodyPS
 
 }
 
-[CreateAssetMenu(fileName = "Body Parts", menuName = "New Charater Body Parts Arm")]
 public class BodyPS_Arm : BodyPS
 {
     public BodyPS_Arm()
@@ -60,7 +56,6 @@ public class BodyPS_Arm : BodyPS
 
 }
 
-[CreateAssetMenu(fileName = "Body Parts", menuName = "New Charater Body Parts")]
 public class BodyPS_Leg : BodyPS
 {
     public BodyPS_Leg()

@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Desins : MonoBehaviour
+public class DesIns : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TileDes td;
+    [SerializeField] TileDes_base TileDes_Base;
 
-    public void DrawSprite(SpriteRenderer sr, Vector3 location)
-    {
-        sr.sprite = td.Sprites;
-        sr.transform.position = location;
-        //Ïû³ýÅö×²
-        if (td.passable)
-        {
-            Destroy(sr.GetComponent<BoxCollider2D>());
-            Destroy(sr.GetComponent<Rigidbody2D>());
-            Destroy(sr.GetComponent<CompositeCollider2D>());
-        }
+
+    public DesIns() {
+       // show the sprite
     }
+}
+public class DesIns_Wall : DesIns
+{
+ 
+}
 
+public class Building {
+    public List<DesIns_Wall> Walls { get; set; }
 
+    //need to split
+    public List<DesIns_Wall> Duplicate_Walls { get; set; }
+    public List<Vector3> Space { get; set; }
 }

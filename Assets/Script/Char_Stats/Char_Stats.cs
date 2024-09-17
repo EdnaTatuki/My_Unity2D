@@ -47,8 +47,9 @@ public class Char_Stats : ScriptableObject
     public List<string> Race_Detail;
 
     //race or array for body parts list. can be null 
+    //or [head,0 ......] 
     public string Race_BPL;
-    //name of dis£¬. can be null 
+    //name of disï¿½ï¿½. can be null 
     public string BPL_DisName;
 
     public Sprite Char_icon;

@@ -5,11 +5,12 @@ using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "Des", menuName = "New Des")]
 
-public class TileDes : ScriptableObject
+public class TileDes_base : ScriptableObject
 {
     public int Width;
     public int Height;
     public bool passable;
+    // passable and coild box ......
 
     public Sprite Sprites;
 
