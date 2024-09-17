@@ -19,9 +19,9 @@ public class DesIns_Wall : DesIns
 }
 
 public class Building {
-    public List<DesIns_Wall> Walls { get; set; }
+    public List<DesIns> Walls { get; set; }
 
     //need to split
-    public List<DesIns_Wall> Duplicate_Walls { get; set; }
+    public List<DesIns> Duplicate_Walls { get; set; }
     public List<Vector3> Space { get; set; }
 }

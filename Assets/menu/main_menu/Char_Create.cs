@@ -14,14 +14,14 @@ public class Char_Create : MonoBehaviour
     public void Setup()
     {
         N_Charater = new Charatcater_I(_base, level);
-       // _detail_1.SetData(N_Charater);
+        _detail_1.SetData(N_Charater);
     }
 
 
 
     public void Start()
     {
-       // Setup();
+        Setup();
         
     }
 

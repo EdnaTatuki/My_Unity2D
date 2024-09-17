@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using Unity.VisualScripting.FullSerializer;
@@ -17,40 +18,52 @@ public class DrawController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        List<DesIns>Walls = new List<DesIns>();
+        DesIns [] Walls_a = GetComponentsInChildren<DesIns>(true);
+        Walls = Walls_a.ToList();
         
-
-
+        GetBuilding(Walls);
     }
 
     // Update is called once per frame
 
 
     // take all walls in the map , return a building 
-     public List<Building> GetBuilding (List<DesIns_Wall> Walls)
+     public List<Building> GetBuilding (List<DesIns> Walls)
      {
         List<Building> build_result = new List<Building>();
-        List<DesIns_Wall> wall_list = Walls;
+        List<DesIns> wall_list = Walls;
         List<Vector3> poslist = GetWallPositionList(Walls);
+
 
         // step1 loop contllor
         int step1 = 0;
         int infiloop1 = 0;
+         //Debug.Log(wall_list.Count);
 
-
-        while (wall_list.Count == step1) {
+        while (wall_list.Count != step1) {
 
             step1 = wall_list.Count;
-
-
+ 
 
         for (int i =0 ; i < wall_list.Count ; i++)
         {
+            
             if(GetAjacentWallsNum(wall_list[i], wall_list) < 2) 
             {
+
+                //test 
+                wall_list[i].transform.GetComponent<SpriteRenderer>().color = Color.black;
+
+
+
                 wall_list.Remove(wall_list[i]);
+               
+
+                continue;
             }
 
-            if(GetAjacentWallsNum(wall_list[i], wall_list)==2 && GetCornerWallsNum(wall_list[i], wall_list) == 1) 
+            if(GetAjacentWallsNum(wall_list[i], wall_list) == 2 && GetCornerWallsNum(wall_list[i], wall_list) == 1) 
             {
                 if (IsWallatCorner(wall_list[i],wall_list))
 
@@ -76,7 +89,11 @@ public class DrawController : MonoBehaviour
                 */
 
                 {
+
+                //test 
+                wall_list[i].transform.GetComponent<SpriteRenderer>().color = Color.gray;
                 wall_list.Remove(wall_list[i]);
+
                 }
                 
             }
@@ -92,11 +109,18 @@ public class DrawController : MonoBehaviour
 
         }
 
-
+        
 
         //step2
         //get min position
-        DesIns_Wall min = wall_list[0];
+        // == 0
+        if (wall_list.Count == 0) {
+            goto END; 
+
+            }
+
+
+        DesIns min = wall_list[0];
         for (int i =0 ; i < wall_list.Count ; i++)
         {
             if(wall_list[i].transform.position.x < min.transform.position.x){
@@ -108,7 +132,7 @@ public class DrawController : MonoBehaviour
         }
 
         
-        
+
 
 
 
@@ -118,25 +142,25 @@ public class DrawController : MonoBehaviour
 
         //step2 loop 
         int newbuildindex = 0;
-        DesIns_Wall start =min;
-        DesIns_Wall end = null;
+        DesIns start =min;
+        DesIns end = null;
         Vector3 driction = Vector3.up;
 
         Building building = new Building();
 
-         List<DesIns_Wall> res_wl = new List<DesIns_Wall>();
+         List<DesIns> res_wl = new List<DesIns>();
          // 1. noemal wall near the true duplicatepoint can be in this incoorrcetly
          
-        List<DesIns_Wall> duplicatepoint = new List<DesIns_Wall>();
+        List<DesIns> duplicatepoint = new List<DesIns>();
 
 
-        while(wall_list.Count == 0)
+        while(wall_list.Count != 0)
         {
 
         
 
         
-        while (end == start)
+        while (end != start)
         {
             //frist time 
             if (end ==null){
@@ -147,7 +171,7 @@ public class DrawController : MonoBehaviour
                 res_wl.Add(end);
 
             //test with color
-            
+            end.GetComponent<SpriteRenderer>().color = Color.red;
 
 
              }
@@ -212,17 +236,24 @@ public class DrawController : MonoBehaviour
         return build_result;
 
 
+
+        END:
+
+        return null;
+
+
      }
-    public List<Vector3> GetWallPositionList (List<DesIns_Wall> Walls){
+    public List<Vector3> GetWallPositionList (List<DesIns> Walls){
         List<Vector3> result = new List<Vector3>();
         for (int i =0 ; i < Walls.Count ; i++)
         {
+
             result.Add(Walls[i].transform.position);
         }
         return result;
     }
 
-    public int GetAjacentWallsNum (DesIns mainDes, List<DesIns_Wall> Walls)
+    public int GetAjacentWallsNum (DesIns mainDes, List<DesIns> Walls)
     {
         int result = 0;
         if(IsExistWallsFormPos(mainDes.transform.position+Vector3.up ,Walls))
@@ -238,7 +269,7 @@ public class DrawController : MonoBehaviour
 
     }
 
-    public int GetCornerWallsNum (DesIns_Wall mainDes, List<DesIns_Wall> Walls)
+    public int GetCornerWallsNum (DesIns mainDes, List<DesIns> Walls)
     {
         int result = 0;
         if(IsExistWallsFormPos(mainDes.transform.position+Vector3.up+Vector3.left ,Walls))
@@ -254,7 +285,7 @@ public class DrawController : MonoBehaviour
 
     }
 
-    public bool IsWallatCorner (DesIns_Wall mainDes, List<DesIns_Wall> Walls)
+    public bool IsWallatCorner (DesIns mainDes, List<DesIns> Walls)
     {
         if (IsExistWallsFormPos(mainDes.transform.position+Vector3.up,Walls) && IsExistWallsFormPos(mainDes.transform.position+Vector3.right,Walls) && IsExistWallsFormPos(mainDes.transform.position+Vector3.up+Vector3.right,Walls))
         return true;
@@ -269,7 +300,7 @@ public class DrawController : MonoBehaviour
         return false;
     }   
 
-    public bool IsExistWallsFormPos (Vector3 pos, List<DesIns_Wall> Walls)
+    public bool IsExistWallsFormPos (Vector3 pos, List<DesIns> Walls)
     {
         for (int i =0 ; i < Walls.Count ; i++){
             if (Walls[i].transform.position == pos)
@@ -279,7 +310,7 @@ public class DrawController : MonoBehaviour
         }
         return false;
     }
-    public DesIns_Wall GetWallsFormPos (Vector3 pos, List<DesIns_Wall> Walls )
+    public DesIns GetWallsFormPos (Vector3 pos, List<DesIns> Walls )
     {
             {
         for (int i =0 ; i < Walls.Count ; i++){
