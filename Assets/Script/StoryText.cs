@@ -102,7 +102,7 @@ public class StoryText
         for (int i = 0; i < _line.Count; i++)
         {
             for (int j = 0; j < _char.Count; j++)
-                if (_char[j].Char_base_Stat.Char_name == _line[i].s_char_name)
+                if (_char[j].Char_base_Stat.Char_Name == _line[i].s_char_name)
                 {
                     _line[i].s_char = _char[j];
                 }

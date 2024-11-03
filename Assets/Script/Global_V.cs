@@ -32,7 +32,7 @@ public  class Global_V
     {
         for (int i = 0; i <+ All_Char.Count; i++)
         {
-            if (string.Compare(All_Char[i].Char_base_Stat.Char_name, _name)==0)
+            if (string.Compare(All_Char[i].Char_base_Stat.Char_Name, _name)==0)
             {
                 
                 return All_Char[i];

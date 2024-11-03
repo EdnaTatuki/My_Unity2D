@@ -7,7 +7,7 @@ public class Char_Create : MonoBehaviour
     [SerializeField] Char_Stats _base;
     [SerializeField] int level;
 
-    public Charatcater_I N_Charater;
+    [SerializeField] Charatcater_I N_Charater;
 
     [SerializeField] Char_Detail_1 _detail_1;
 

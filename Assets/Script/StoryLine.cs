@@ -35,7 +35,7 @@ public class StoryLine
         else
         {
             s_char = chare;
-            s_char_name = chare.Char_base_Stat.Char_name;
+            s_char_name = chare.Char_base_Stat.Char_Name;
         
     }
         Location = location;

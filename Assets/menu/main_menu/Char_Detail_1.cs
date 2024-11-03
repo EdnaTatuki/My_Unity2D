@@ -9,21 +9,21 @@ using Unity.VisualScripting;
 
 public class Char_Detail_1 : MonoBehaviour
 {
-    public TMP_Text Nmae;
+    [SerializeField] TMP_Text Nmae;
 
-    public TMP_Text Gender;
+    [SerializeField] TMP_Text Gender;
 
-    public TMP_Text Max_HP;
-    public TMP_Text Max_SP;
-    public TMP_Text Max_MP;
+    [SerializeField] TMP_Text Max_HP;
+    [SerializeField] TMP_Text Max_SP;
+    [SerializeField] TMP_Text Max_MP;
 
-    public VerticalLayoutGroup BPContent;
+    [SerializeField] VerticalLayoutGroup BPContent;
 
 
     public void SetData(Charatcater_I charater)
     {
-        ShowText(Nmae, charater.Char_base_Stat.Char_name);
-        Gender.text = charater.Char_base_Stat.Sex.ToString();
+        ShowText(Nmae, charater.Char_base_Stat.Char_Name);
+        Gender.text = charater.Char_base_Stat.SEX.ToString();
         Max_HP.text = charater.Max_HP.ToString();
         Max_SP.text = charater.Max_SP.ToString();
         Max_MP.text = charater.Max_MP.ToString();
@@ -40,7 +40,7 @@ public class Char_Detail_1 : MonoBehaviour
 
     public void ShowText(TMP_Text _test,string _showtest,string language="sc")
     {
-        //ÏÂÃæ±¨´í£¬×ÖÌåÎÊÌâ
+        //ï¿½ï¿½ï¿½æ±¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         /*
         if (language == "jp")
         {

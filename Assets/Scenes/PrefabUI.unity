@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,12 +174,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 597181971337461615, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554538724597210261, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -550.7842
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554538724597210261, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -143.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554538724597210261, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -275.6215
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554538724597210261, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 97.959
+      objectReference: {fileID: 0}
     - target: {fileID: 3338346785108649664, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
       propertyPath: m_Name
       value: DUICamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901409935218584595, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980447283019732189, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743724662713718624, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21ddbb15424fb0f4dad1e46206795d69, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1041685756}

@@ -16,11 +16,11 @@ public class Charatcater_I
     public Char_Stats Char_base_Stat { get; set; }
     public int Char_Level { get; set; }
 
-    public Dictionary<string, Sprite> Char_Sprite;
-    public Dictionary<string, SkeletonDataAsset> Char_Spine;
-    public Dictionary<Char_Race, List<string>> Char_RaceDic;
+    public Dictionary<string, Sprite> Char_Sprite{ get; set; }
+    public Dictionary<string, SkeletonDataAsset> Char_Spine{ get; set; }
+    public Dictionary<Char_Race, List<string>> Char_RaceDic{ get; set; }
 
-    public List<BodyPS> Char_BPS;
+    public List<BodyPS> Char_BPS{ get; set; }
 
 
     public Charatcater_I(Char_Stats _Stats, int _level)
@@ -28,33 +28,35 @@ public class Charatcater_I
 
         Char_base_Stat = _Stats;
         Char_Level = _level;
-        if (Char_base_Stat.IllustrationType == "Spine")
+        if (Char_base_Stat.ILLUSTRATIONTYPE == "Spine")
         {
-            Char_Spine = SpineDict(Char_base_Stat.Char_SpineName, Char_base_Stat.Char_SpineImg);
+            Char_Spine = SpineDict(Char_base_Stat.Char_SPINEName, Char_base_Stat.Char_SpineSKEL);
         }
         else
         {
-            Char_Sprite = SpriteDict(Char_base_Stat.Char_SpriteName, Char_base_Stat.Char_SpriteImg);
+            Char_Sprite = SpriteDict(Char_base_Stat.Char_SPRITEName, Char_base_Stat.Char_SpriteIMG);
         }
 
-        if (Char_base_Stat.Race_Detail.Count > 0)
+        if (Char_base_Stat.RACE_Detail.Count > 0)
         {
-            Char_RaceDic = Sec_Race(Char_base_Stat.Race, Char_base_Stat.Race_Detail);
+            Char_RaceDic = Sec_Race(Char_base_Stat.RACES, Char_base_Stat.RACE_Detail);
         }
 
+        if(Char_base_Stat.RACES.Count>0){  // Race.Count = 0 ???
         Char_BPS=Creat_Body_ByRace(Char_base_Stat);
+        }
         
-        if (Char_BPS.Count != 0) 
+        if ( Char_BPS!= null && Char_BPS.Count > 0) 
         {
             // some errors in  string.Empty
             //how to use  Default power
-            if (Char_base_Stat.BPL_DisName == string.Empty)
+            if (Char_base_Stat.BPL_DisNAME == null ||Char_base_Stat.BPL_DisNAME == string.Empty)
             {
             GetDisForBPL("Default", Char_BPS, Char_base_Stat);
             }
             else
             {
-            GetDisForBPL(Char_base_Stat.BPL_DisName, Char_BPS, Char_base_Stat);
+            GetDisForBPL(Char_base_Stat.BPL_DisNAME, Char_BPS, Char_base_Stat);
             }
         }
  
@@ -73,11 +75,11 @@ public class Charatcater_I
         //дһ����csv�ļ����ȡ�ģ���Ҫ�����б�
         List<BodyPS> result = new List<BodyPS>();
         //�������
-        // Race_BPL read a string or  [head,0 ......] 
+        // RACE_BPL read a string or  [head,0 ......] 
         // some errors in  string.Empty
-        if (_Stats.Race_BPL != string.Empty)
+        if (_Stats.RACE_BPL != null &&_Stats.RACE_BPL != string.Empty)
         {
-            string[] bpln = _Stats.Race_BPL.Split(",");
+            string[] bpln = _Stats.RACE_BPL.Split(",");
             
             if (bpln.Length > 1)
             {
@@ -93,18 +95,18 @@ public class Charatcater_I
         }
 
         //read race detail
-        if (_Stats.Race_Detail.Count != 0 && _Stats.Race_Detail[0] != "#")
+        if (_Stats.RACE_Detail.Count != 0 && _Stats.RACE_Detail[0] != "#")
         {
-            result = GetBPLFromRace_Str(_Stats.Race_Detail[0]);
+            result = GetBPLFromRace_Str(_Stats.RACE_Detail[0]);
             return result;
         }
 
 
         //read race
 
-         result = GetBPLFromRace_Str(_Stats.Race[0].ToString());
+         result = GetBPLFromRace_Str(_Stats.RACES[0].ToString());
         if (result.Count == 0) {
-            Debug.Log("Error"+ _Stats.Char_name+ "BPS is Empty");
+            Debug.Log("Error"+ _Stats.Char_Name+ "BPS is Empty");
         }
         
         return result;
@@ -274,7 +276,7 @@ public class Charatcater_I
                 }
                 break;
             }
-            Debug.Log("Error"+ stat.Char_name+ "BPS's stats is Empty");
+            Debug.Log("Error"+ stat.Char_Name+ "BPS's stats is Empty");
 
         }
 
@@ -282,12 +284,12 @@ public class Charatcater_I
         {
             if (result.ContainsKey(bps[i].BPType.ToString()))
             {
-                bps[i].Strength = ((1- GetDisForBPL_Rnd())*float.Parse(result[bps[i].BPType.ToString()][0]) / 100) * stat.Strength;
-                bps[i].Dexterity = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][2]) / 100) * stat.Dexterity;
-                bps[i].Stamina = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.Stamina;
-                bps[i].Speed = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][5]) / 100) * stat.Speed;
-                bps[i].Intellgence = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][4]) / 100) * stat.Intellgence;
-                bps[i].Spirit = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][3]) / 100) * stat.Spirit;
+                bps[i].Strength = ((1- GetDisForBPL_Rnd())*float.Parse(result[bps[i].BPType.ToString()][0]) / 100) * stat.STRENGTH;
+                bps[i].Dexterity = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][2]) / 100) * stat.DEXTERITY;
+                bps[i].Stamina = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][1]) / 100) * stat.STAMINA;
+                bps[i].Speed = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][5]) / 100) * stat.SPEED;
+                bps[i].Intellgence = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][4]) / 100) * stat.INTELLGENCE;
+                bps[i].Spirit = ((1 - GetDisForBPL_Rnd()) * float.Parse(result[bps[i].BPType.ToString()][3]) / 100) * stat.SPIRIT;
 
 
             }
@@ -320,46 +322,46 @@ public class Charatcater_I
 
     public int C_Strength
     {
-        get { return Char_Level * (int)(Char_base_Stat.Strength + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.STRENGTH + 1) / 30; }
     }
     public int C_Stamina
     {
-        get { return Char_Level * (int)(Char_base_Stat.Stamina + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.STAMINA + 1) / 30; }
     }
     public int C_Dexterity
     {
-        get { return Char_Level * (int)(Char_base_Stat.Dexterity + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.DEXTERITY + 1) / 30; }
     }
 
     public int C_Speed
     {
-        get { return Char_Level * (int)(Char_base_Stat.Speed + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.SPEED + 1) / 30; }
     }
 
     public int C_Spirit
     {
-        get { return Char_Level * (int)(Char_base_Stat.Spirit + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.SPIRIT + 1) / 30; }
     }
 
 
     public int C_Intellgence
     {
-        get { return Char_Level * (int)(Char_base_Stat.Intellgence + 1) / 30; }
+        get { return Char_Level * (int)(Char_base_Stat.INTELLGENCE + 1) / 30; }
     }
 
     public int Max_HP
     {
-        get { return (int)(Cacu_Curve(C_Strength, Char_base_Stat.Strength) + Cacu_Curve(C_Stamina, Char_base_Stat.Stamina, 2) + Cacu_Curve(C_Spirit, Char_base_Stat.Spirit, (float)1.5)); }
+        get { return (int)(Cacu_Curve(C_Strength, Char_base_Stat.STRENGTH) + Cacu_Curve(C_Stamina, Char_base_Stat.STAMINA, 2) + Cacu_Curve(C_Spirit, Char_base_Stat.SPIRIT, (float)1.5)); }
     }
 
     public int Max_SP
     {
-        get { return (int)(Cacu_Curve(C_Strength, Char_base_Stat.Strength) + Cacu_Curve(C_Stamina, Char_base_Stat.Stamina) + Cacu_Curve(C_Speed, Char_base_Stat.Speed) + Cacu_Curve(C_Dexterity, Char_base_Stat.Dexterity)); }
+        get { return (int)(Cacu_Curve(C_Strength, Char_base_Stat.STRENGTH) + Cacu_Curve(C_Stamina, Char_base_Stat.STAMINA) + Cacu_Curve(C_Speed, Char_base_Stat.SPEED) + Cacu_Curve(C_Dexterity, Char_base_Stat.DEXTERITY)); }
     }
 
     public int Max_MP
     {
-        get { return (int)(Cacu_Curve(C_Intellgence, Char_base_Stat.Intellgence, (float)2.5) + Cacu_Curve(C_Spirit, Char_base_Stat.Spirit, (float)2)); }
+        get { return (int)(Cacu_Curve(C_Intellgence, Char_base_Stat.INTELLGENCE, (float)2.5) + Cacu_Curve(C_Spirit, Char_base_Stat.SPIRIT, (float)2)); }
     }
 
     //x is stat current,  D_x is the limit of the stat, k is caculate coefficient

@@ -113,7 +113,7 @@ public class DialogManager : MonoBehaviour
 
     }
 
-    //¸ù¾ÝIndex ºÍ StoryToTlakÀ´Update£¬IndexÊÇStoryTlakÖÐLineµÄË÷Òý
+    //ï¿½ï¿½ï¿½ï¿½Index ï¿½ï¿½ StoryToTlakï¿½ï¿½Updateï¿½ï¿½Indexï¿½ï¿½StoryTlakï¿½ï¿½Lineï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public void DialogUpdate()
     {
@@ -146,7 +146,7 @@ public class DialogManager : MonoBehaviour
 
 
 
-                //ÕâÑùÐ´µÄ»°ÎÄ±¾ÀïÒªÏÈÇÐ»»³¡¾°ÔÙÇÐ»»BGM
+                //ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ä»ï¿½ï¿½Ä±ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½BGM
                     if (StoryToTlak.StoryLine_list[Index].L_Type == "ChangeBg")
                     {
                     if (StoryToTlak.StoryLine_list[Index].Line == "None")
@@ -214,7 +214,7 @@ public class DialogManager : MonoBehaviour
     public  void CharSpeak(Charatcater_I _charater,string content, string _Font = "sc", int location = 0,string _imgname="normal")
     {
         AddCharDialog(_charater, location, _imgname);
-        ShowDiglog(_charater.Char_base_Stat.Char_name, content, _Font);
+        ShowDiglog(_charater.Char_base_Stat.Char_Name, content, _Font);
 
     }
 
@@ -272,7 +272,7 @@ public class DialogManager : MonoBehaviour
     }
 
 
-    //location Î»ÖÃ£¬_FontÊ¹ÓÃµÄ×ÖÌå
+    //location Î»ï¿½Ã£ï¿½_FontÊ¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
     public void ShowImg(Sprite _char, int location = 0)
     {
         CharSpritel[location].color = Color.white;
@@ -349,7 +349,7 @@ public class DialogManager : MonoBehaviour
     public void AddCharDialog(Charatcater_I _charater, int location = 0, string _imgname = "normal")
     {
         int _new= 0;
-        if (_charater.Char_base_Stat.IllustrationType == "Spine")
+        if (_charater.Char_base_Stat.ILLUSTRATIONTYPE == "Spine")
         {
             //var new is to set Spine Animation show smoothly
             if(Dialoging_Char.Contains(_charater)) {
@@ -390,7 +390,7 @@ public class DialogManager : MonoBehaviour
 
 
     /// <summary>
-    /// Ê¹spriteÆÌÂúÕû¸öÆÁÄ»
+    /// Ê¹spriteï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
     /// </summary>
     public void FillToCamera(Transform _objanimator)
     {
