@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &26147810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &105278617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &192252247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7771,7 +7771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &892103024
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9355,7 +9355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &1349988878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20139,7 +20139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &1671532415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20355,7 +20355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &1769204873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21527,7 +21527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &1908627777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21743,7 +21743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e965678e3e4cc9468b68cf443ad2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileDes_Base: {fileID: 0}
+  TileDes_Base: {fileID: 11400000, guid: a6fef175bb94ed84fb486ae9d951145d, type: 2}
 --- !u!212 &2012153436
 SpriteRenderer:
   m_ObjectHideFlags: 0
