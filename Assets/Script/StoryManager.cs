@@ -99,7 +99,7 @@ public class StoryManager:MonoBehaviour
         global_V.AddToAllChar("導守梢");
         
         DialogManager.instance.StartIndex();
-        StoryText preolg = new StoryText(global_V,"ad36");
+        StoryText preolg = new StoryText(global_V,"Spinetext");
         DialogManager.instance.StoryToTlak = preolg;
         isStoryMode = true;
        
